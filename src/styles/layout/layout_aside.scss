@@ -1,0 +1,30 @@
+@import '../variate.scss';
+// 侧边导航栏样式
+.layout_aside {
+  width: 240px;
+  height: 100%;
+  background-color: #eee;
+  transition: width 0.25s;
+  /*el-scrollbar 必须指定高度*/
+  .scrollMenuBox {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  &.isCollapseBox {
+    width: 64px;
+  }
+
+  .el-menu {
+    background-color: transparent;
+  }
+  //折叠后的一级箭头
+  .el-menu--collapse .el-submenu > .el-submenu__title .el-submenu__icon-arrow {
+    left: 10px;
+    font-size: 16px;
+    margin-top: -8px;
+  }
+  .menu_title_display {
+    display: none;
+  }
+}

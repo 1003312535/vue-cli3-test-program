@@ -1,0 +1,83 @@
+@import '@/styles/variate.scss';
+.Header {
+  display: flex;
+  height: $topHeaderHight;
+  background-color: #eee;
+  border-bottom: 1px solid;
+  .logo {
+    width: 240px;
+    height: 100%;
+    box-shadow: 1px 0px 3px #888888;
+    transition: 0.25s;
+  }
+  .logo_collapse {
+    width: 64px;
+  }
+  //折叠 二级 菜单的区域
+  .collapse_btn {
+    width: 30px;
+    font-size: 30px;
+    color: #888888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      background: rgba($color: #888888, $alpha: 0.1);
+    }
+  }
+  // 一级菜单区域
+  .top_menu {
+    width: calc(100% - 240px - 300px);
+    .el-tabs {
+      height: $topHeaderHight;
+      //
+      /deep/ .el-tabs__nav-next,
+      /deep/ .el-tabs__nav-prev {
+        line-height: $topHeaderHight;
+      }
+      // 头
+      /deep/.el-tabs__header {
+        height: $topHeaderHight;
+        margin: 0;
+      }
+      /deep/ .el-tabs__item {
+        height: unset;
+        display: table-cell;
+      }
+      /deep/.el-tabs__nav-wrap::after {
+        display: none;
+      }
+      /deep/.el-tabs__active-bar {
+        display: none;
+      }
+      // 内容
+      /deep/ .el-tabs__content {
+        display: none;
+      }
+    }
+    .top_menu_item {
+      height: $topHeaderHight;
+      display: flex;
+      line-height: initial;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .top_menu_img {
+        font-size: 20px;
+        line-height: 26px;
+      }
+      .menu_title {
+        line-height: 26px;
+      }
+    }
+  }
+  // 其他功能区域
+  .top_feature {
+    display: flex;
+    .feature_item {
+      line-height: $topHeaderHight;
+      min-width: 30px;
+      text-align: center;
+    }
+  }
+}

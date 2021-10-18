@@ -1,0 +1,78 @@
+/* 基本样式表 */
+
+/**--------------------------------------------------宽高样式库----------------------------------------------------------------*/
+$widthandheight: (p100: 100%, p50: 50%, p20: 20%, p90: 90%, p80: 80%, p70:70%, p65:65%, p60: 60%, p40: 40%, p30: 30%, p10: 10%, p25: 25%, p92: 92%, p84: 84%, p16: 16%, p87: 8.7%, p913: 91.3%, p8: 8%, p95: 95%, p98: 98%, vw100: 100vw, vh100: 100vh, vw50: 50vw, vh50: 50vh, );
+@each $key,
+$value in $widthandheight {
+  .width-#{$key} {
+    width: $value !important;
+  }
+
+  .height-#{$key} {
+    height: $value !important;
+  }
+}
+/**--------------------------------------------------弹性盒子布局----------------------------------------------------------------*/
+$justifycontent: (center: center,start: flex-start,end: flex-end,around: space-around,between: space-between);
+$alignitems: (center: center,start: flex-start,end: flex-end,baseline: baseline,stretch: stretch);
+$flexwrap: (wrap: wrap,nowrap: nowrap,wrap-reverse: wrap-reverse);
+$flexdirection: (column: column,row: row,columnreverse: column-reverse,rowreverse: row-reverse);
+$aligncontent: (center: center,start: flex-start,end: flex-end,around: space-around,between: space-between,stretch: stretch);
+$flexshrink: (zone: 0,one: 1);
+$flexgrow: (one: 1,two: 2,three: 3);
+$displays: (none: none,block: block,inlineblock: inline-block,inline: inline,fx: flex,inlineflex:inline-flex);
+$flex:(one: 1);
+$flexbasis:(auto:auto);
+@each $ds,$display in $displays {
+    .ds-#{$ds} {
+        display: #{$display} !important;
+    }
+}
+@each $key,$value in $justifycontent {
+    .justify-content-#{$key} {
+        justify-content: $value !important;
+    }    
+}
+@each $key,$value in $alignitems {
+    .align-items-#{$key} {
+        align-items: $value !important;
+    }
+    .align-self-#{$key} {
+        align-self: $value !important;
+    }
+}
+@each $key,$value in $flexwrap {
+    .flex-#{$key} {
+        flex-wrap: $value !important;
+    }
+}
+@each $key,$value in $flexdirection {
+    .flex-direction-#{$key} {
+        flex-direction: $value !important;
+    }
+}
+@each $key,$value in $aligncontent {
+    .align-content-#{$key} {
+        align-content: $value !important;
+    }
+}
+@each $key,$value in $flexshrink {
+    .flex-shrink-#{$key} {
+        flex-shrink: $value !important;
+    }
+}
+@each $key,$value in $flexgrow {
+    .flex-grow-#{$key} {
+        flex-grow: $value !important;
+    }
+}
+@each $key,$value in $flex{
+    .flex-#{$key}{
+        flex:$value !important;
+    }
+}
+@each $key,$value in $flexbasis{
+    .flex-basis-#{$key}{
+        flex-basis:$value !important
+    }
+}

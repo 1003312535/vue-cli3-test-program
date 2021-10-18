@@ -1,0 +1,19 @@
+// @import './layout/top.scss'; // 顶部导航栏
+@import './variate.scss';
+@import './layout/layout_aside.scss'; // 侧面导航栏
+@import './basestyle.scss'; //基本样式类名 表
+
+@import './normalize.scss'; //初始化样式
+
+@import './element.scss';
+.layout_container {
+  height: 100%;
+  
+}
+.layout_wrap{
+  height: calc(100% - #{$topHeaderHight});
+  display: flex;
+  .layout_main{
+    flex: 1;
+  }
+}
