@@ -1,4 +1,26 @@
-.layout_tag{
-  height: 60px;
-  background-color: #eee;
+.layout_tag {
+  height: 40px;
+  padding: 0 20px;
+  /deep/.el-tabs__header {
+    margin: 0 0 0;
+    .el-tabs__item {
+      padding: 0 20px;
+      border: none;
+    }
+  }
+  /deep/.el-tabs__content {
+    //内容
+    display: none;
+  }
+  /deep/.el-tabs__nav-wrap::after {
+    //下划线
+    display: none;
+  }
+  /deep/.el-tabs--card>.el-tabs__header .el-tabs__nav{
+    border: none;
+  }
+  // background-color: #eee;
+  .tablist {
+    border: none;
+  }
 }

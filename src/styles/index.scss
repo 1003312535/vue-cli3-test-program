@@ -1,4 +1,4 @@
-// @import './layout/top.scss'; // 顶部导航栏
+// @import './page/layout/top.scss'; // 顶部导航栏
 @import './variate.scss';
 @import './layout/layout_aside.scss'; // 侧面导航栏
 @import './basestyle.scss'; //基本样式类名 表
@@ -12,6 +12,7 @@
 }
 .layout_wrap{
   height: calc(100% - #{$topHeaderHight});
+  // background-color: #eee;
   display: flex;
   .layout_main{
     flex: 1;

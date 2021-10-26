@@ -2,6 +2,10 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 
+//权限配置
+import './permission'; // 权限
+
+
 Vue.config.productionTip = false;
 // element-ui
 import ElementUI from 'element-ui';

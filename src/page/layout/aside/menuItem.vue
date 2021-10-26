@@ -25,7 +25,7 @@ export default {
   name: "menuItem",
   props: { menuItem: Object },
   mounted() {
-    console.log(this.menuItem, this.menuItem.children, "this.menuItem---")
+    // console.log(this.menuItem, this.menuItem.children, "this.menuItem---")
   },
   computed: {
     ...mapGetters(["isCollapse"]),

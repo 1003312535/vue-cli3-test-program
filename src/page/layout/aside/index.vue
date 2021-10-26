@@ -2,7 +2,7 @@
 <template>
   <div class="layout_aside" :class="isCollapse? 'isCollapseBox':''">
     <el-scrollbar ref="scrollMenuRef" class="scrollMenuBox">
-      <el-menu :collapse-transition="false" :collapse="isCollapse">
+      <el-menu :collapse-transition="false" :collapse="isCollapse" :router="true" :default-active="currentTag.name">
         <menu-item v-for="(item,index) in menuList" :key="item.path" :menuItem="item"></menu-item>
       </el-menu>
     </el-scrollbar>
@@ -18,11 +18,11 @@ export default {
     return { menuList: [] }
   },
   computed: {
-    ...mapGetters(["isCollapse"]),
+    ...mapGetters(["isCollapse",'currentTag']),
   },
   mounted() {
     this.menuList = this.$store.state.user.menuList
-    console.log(this.menuList)
+    console.log(this.menuList,'this.menuList')
   },
 }
 </script>

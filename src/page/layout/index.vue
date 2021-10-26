@@ -10,6 +10,7 @@
         <!-- 标签导航 -->
         <layout-tag></layout-tag>
         <div class="layout_center">
+          <layout />
         </div>
         <div class="layout_footer"></div>
       </div>
@@ -25,11 +26,12 @@
 </template>
 
 <script>
-import layoutTop from "@/layout/top"
-import layoutAside from "@/layout/aside"
-import layoutTag from "@/layout/tag"
+import layoutTop from "@/page/layout/top"
+import layoutAside from "@/page/layout/aside"
+import layoutTag from "@/page/layout/tag"
+import layout from '@/page/layout/layout'
 export default {
-  components: { layoutTop, layoutAside,layoutTag },
+  components: { layoutTop, layoutAside,layoutTag,layout },
   data() {
     return { checkList: [] }
   },

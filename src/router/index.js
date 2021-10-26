@@ -1,32 +1,38 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import Layout from '@/layout'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import Home from '../views/Home.vue';
+import Layout from '@/page/layout';
+import errorPage from './error';//错误页面
+Vue.use(VueRouter);
 
-Vue.use(VueRouter)
-
-const routes = [{
+const routes = [
+  {
     path: '/',
-    name: '首页',
-  
-    component: Layout
+    redirect: '/RenNing/index',
   },
   {
-    path: '/about',
-    name: 'About',
-    component: () => import( /* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/RenNing',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: '首页',
+        component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+      },
+      {
+        path: 'ceshi',
+        name: '测试',
+        component: () => import(/* webpackChunkName: "about" */ '../views/Home.vue'),
+      },
+    ],
   },
-  {
-    path: '/index',
-    name: '首页',
-    component: () => import( /* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
+  ...errorPage,
+];
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

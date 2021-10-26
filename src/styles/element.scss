@@ -2,3 +2,13 @@
 .el-scrollbar__wrap {
   overflow-x: hidden;
 }
+//el-menu 背景颜色
+.el-menu {
+  background-color: transparent;
+}
+//el-submenu__title 折叠菜单行高设置
+.el-menu-item,
+.el-submenu__title {
+  height: 40px;
+  line-height: 40px;
+}
