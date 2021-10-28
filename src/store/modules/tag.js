@@ -34,7 +34,7 @@ export default {
       setStore({ name: 'currentTag', content: state.currentTag, type: 'session' });
       console.log(state.menuTagList, 'menuTagListmenuTagListmenuTagListmenuTagList');
     },
-    //删除 payload 数组
+    //删除
     DEL_TAG(state, payload) {
       payload.forEach((path) => {
         //如果删除当前标签时
@@ -62,5 +62,30 @@ export default {
       setStore({ name: 'menuTagList', content: state.menuTagList, type: 'session' });
       setStore({ name: 'currentTag', content: state.currentTag, type: 'session' });
     },
+    //关闭其他
+    CloseOthersTags(state, payload) {
+      state.menuTagList = state.menuTagList.filter((item, index) => {
+        console.log(item, 'items');
+        if (index == 0 || item.path == state.currentTag.path) {
+          return true;
+        } else {
+          false;
+        }
+      });
+      setStore({ name: 'menuTagList', content: state.menuTagList, type: 'session' });
+    },
+    //关闭所有
+    CloseAllTags(state, payload) {
+      /**过滤只留下首页，然后跳转路由到首页 */
+      state.menuTagList = state.menuTagList.filter((item, index) => {
+        if (index == 0) {
+          return true;
+        } else {
+          false;
+        }
+      });
+      setStore({ name: 'menuTagList', content: state.menuTagList, type: 'session' });
+      router.replace({path: state.menuTagList[0].path});
+    }
   },
 };

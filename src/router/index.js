@@ -2,7 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import Layout from '@/page/layout';
-import errorPage from './error';//错误页面
+import errorPage from './page';//错误页面
 Vue.use(VueRouter);
 
 const routes = [

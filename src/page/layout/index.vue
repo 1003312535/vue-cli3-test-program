@@ -36,31 +36,33 @@ export default {
     return { checkList: [] }
   },
   mounted() {
-    let that = this
-    var menu = document.getElementById("selectMenu")
+    // let that = this
+    // var menu = document.getElementById("selectMenu")
     document.addEventListener("mousedown", mouseDown)
-    document.addEventListener("mouseup", mouseUp)
-    document.oncontextmenu = function (ev) {
-      //阻止鼠标的默认事件
-      ev.preventDefault() //做一些兼容性的处理
-      var ev = ev || event
-      var scrollTop =
-        document.documentElement.scrollTop || document.body.scrollTop
-      menu.style.display = "block"
-      menu.style.left = ev.clientX + "px"
-      //当滑动滚动条时也能准确获取菜单位置
-      menu.style.top = ev.clientY + scrollTop + "px"
-    }
-    window.addEventListener(
-      "keydown",
-      function (event) {
-        // console.log(123);
-        if (event.code == "Escape") {
-          this.isSearch = false
-        }
-      }.bind(this)
-    )
+    // document.addEventListener("mouseup", mouseUp)
+    // document.oncontextmenu = function (ev) {
+    //   //阻止鼠标的默认事件
+    //   ev.preventDefault() //做一些兼容性的处理
+    //   var ev = ev || event
+    //   var scrollTop =
+    //     document.documentElement.scrollTop || document.body.scrollTop
+    //   menu.style.display = "block"
+    //   menu.style.left = ev.clientX + "px"
+    //   //当滑动滚动条时也能准确获取菜单位置
+    //   menu.style.top = ev.clientY + scrollTop + "px"
+    // }
+    // window.addEventListener(
+    //   "keydown",
+    //   function (event) {
+    //     // console.log(123);
+    //     if (event.code == "Escape") {
+    //       this.isSearch = false
+    //     }
+    //   }.bind(this)
+    // )
     function mouseDown(event) {
+      console.log(event,'event')
+      return;
       if (event.target.parentElement.id == "selectMenuList") {
         var t = event.target
         if (t.innerText == "复制") {
@@ -88,17 +90,17 @@ export default {
         menu.style.display = "none"
       }
     }
-    function mouseUp(ev) {
-      var text = ""
-      if (window.getSelection) {
-        text = window.getSelection().toString()
-      } else if (document.selection && document.selection.type != "Control") {
-        text = document.selection.createRange().text
-      }
-      if ("" != text) {
-        that.text = text
-      }
-    }
+    // function mouseUp(ev) {
+    //   var text = ""
+    //   if (window.getSelection) {
+    //     text = window.getSelection().toString()
+    //   } else if (document.selection && document.selection.type != "Control") {
+    //     text = document.selection.createRange().text
+    //   }
+    //   if ("" != text) {
+    //     that.text = text
+    //   }
+    // }
   },
 }
 </script>
