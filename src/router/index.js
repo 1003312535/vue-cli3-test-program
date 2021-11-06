@@ -17,11 +17,13 @@ const routes = [
       {
         path: 'index',
         name: '首页',
+        meta: { isAuth: true },
         component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
       },
       {
         path: 'ceshi',
         name: '测试',
+        meta: { isAuth: true },
         component: () => import(/* webpackChunkName: "about" */ '../views/Home.vue'),
       },
     ],

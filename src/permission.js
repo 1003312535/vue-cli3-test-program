@@ -3,26 +3,32 @@ import store from '@/store';
 import router from '@/router';
 import website from './config/website';
 import { deepClone } from '@/utils/util';
+import { getToken } from '@/utils/auth';
 import { validatenull } from '@/utils/validate';
 import NProgress from 'nprogress'; // progress bar
 import 'nprogress/nprogress.css'; // progress bar style
 NProgress.configure({ showSpinner: false });
 
 // 定义空menutab
-const emptyPage = {
-  name: '',
-  path: '',
-  params: {},
-  query: {},
-  meta: {
-    keepAlive: true,
-  },
-  group: [],
-  closable: false, //true: 不可关闭，false：可关闭
-};
+const emptyPage = { name: '', path: '', params: {}, query: {}, meta: { keepAlive: true }, group: [], closable: false }; //true: 不可关闭，false：可关闭
 
 //路由守卫
 router.beforeEach((to, from, next) => {
+
+
+  //是否有token
+  console.log(getToken(),'getToken')
+  if(getToken()) {
+
+  }else{//token不存在
+    // 判断该路由是否认证
+    if(to.meta.isAuth) {
+      next('/login')
+    }else{
+      next()
+    }
+  }
+  //查看
   setTagList(to); //设置 菜单标签功能
 
   next();

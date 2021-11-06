@@ -26,7 +26,8 @@ export default {
     params: {},
     query: {},
     meta: {
-      keepAlive: true,
+      keepAlive: true,//是否缓存路由
+      isAuth:true,//是否需要认证
     },
     group: [],
     closable: true, //true: 不可关闭，false：可关闭

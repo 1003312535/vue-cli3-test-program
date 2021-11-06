@@ -80,4 +80,16 @@
       text-align: center;
     }
   }
+  //用户区域
+  .top_right_box {
+    flex: 1;
+    margin-right: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .el-dropdown-link {
+      display: flex;
+      align-items: center;
+    }
+  }
 }

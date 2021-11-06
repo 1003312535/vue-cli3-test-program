@@ -31,6 +31,19 @@
 
     </div>
     <!-- 用户信息区域 -->
+    <div class="top_right_box">
+        <el-dropdown trigger="click">
+          <span  class="el-dropdown-link">
+            <avue-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"></avue-avatar>
+            <div>用户1</div>
+            <i class="el-icon-arrow-down el-icon--right"></i>
+          </span>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item icon="el-icon-plus">个人信息</el-dropdown-item>
+            <el-dropdown-item icon="el-icon-circle-plus">退出</el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+    </div>
   </div>
 </template>
 
@@ -54,7 +67,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(["isFullScreen", "isWaterMark",'isCollapse']),
+    ...mapGetters(["isFullScreen", "isWaterMark", "isCollapse"]),
   },
 
   methods: {
@@ -105,7 +118,6 @@ export default {
     },
   },
 }
-
 </script>
 
 <style scoped lang="scss">
